@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/beranda.dart';
 import 'mapzzzz.dart';
 import 'camera.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'OSM in Flutter',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomeScreen(),
+      home: BerandaPage(),
     );
   }
 }
@@ -50,14 +51,14 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Peta Lokasi',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 20),
+                  // Text(
+                  //   'Peta Lokasi',
+                  //   style: TextStyle(
+                  //     fontSize: 24,
+                  //     fontWeight: FontWeight.bold,
+                  //   ),
+                  // ),
+                  // SizedBox(height: 20),
                   ElevatedButton.icon(
                     onPressed: () {
                       Navigator.push(

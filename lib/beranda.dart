@@ -60,27 +60,27 @@ class _BerandaPageState extends State<BerandaPage> {
   final List<Product> _products = [
     Product(
       id: 1,
-      name: 'Sneakers',
-      price: 99.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'Expectorant',
+      price: 30.999,
+      imageUrl: 'actifed.jpg',
     ),
     Product(
       id: 2,
-      name: 'T-Shirt',
-      price: 29.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'Mucohexin',
+      price: 29.999,
+      imageUrl: 'mucohexin.jpg',
     ),
     Product(
       id: 3,
-      name: 'Jeans',
-      price: 59.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'Mecobalamin',
+      price: 114.999,
+      imageUrl: 'mecobalamin.jpg',
     ),
     Product(
       id: 4,
-      name: 'Hat',
-      price: 19.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'Alaxan',
+      price: 80.299,
+      imageUrl: 'alaxan.jpg',
     ),
   ];
   
