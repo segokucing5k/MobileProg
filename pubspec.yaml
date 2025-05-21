@@ -40,6 +40,9 @@ dependencies:
   camera: ^0.10.5+2
   path_provider: ^2.1.0
   path: ^1.8.3
+  audioplayers: ^5.0.0  # Sesuaikan dengan versi terbaru
+  record: ^4.4.0
+  permission_handler: ^10.2.0
 
 dev_dependencies:
   flutter_test:

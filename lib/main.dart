@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/beranda.dart';
 import 'mapzzzz.dart';
 import 'camera.dart';
+import 'voice.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'OSM in Flutter',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: BerandaPage(),
+      home: HomeScreen(),
+      // home: BerandaPage(),
     );
   }
 }
@@ -22,9 +24,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Shopping App'),
-      ),
+      appBar: AppBar(title: Text('Shopping App')),
       body: Column(
         children: [
           // Bagian peta (2/3 layar)
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          
+
           // Bagian tombol (1/3 layar)
           Expanded(
             flex: 1,
@@ -51,26 +51,59 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Text(
-                  //   'Peta Lokasi',
-                  //   style: TextStyle(
-                  //     fontSize: 24,
-                  //     fontWeight: FontWeight.bold,
-                  //   ),
-                  // ),
-                  // SizedBox(height: 20),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => CameraScreen()),
-                      );
-                    },
-                    icon: Icon(Icons.camera_alt),
-                    label: Text('Buka Kamera'),
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CameraScreen(),
+                            ),
+                          );
+                        },
+                        icon: Icon(Icons.camera_alt),
+                        label: Text('Kamera'),
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
+                        ),
+                      ),
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          // Aksi untuk peta jika diperlukan
+                        },
+                        icon: Icon(Icons.map),
+                        label: Text('Peta'),
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
+                        ),
+                      ),
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VoiceRecorderApp(),
+                            ),
+                          );
+                        },
+                        icon: Icon(Icons.mic),
+                        label: Text('Suara'),
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
