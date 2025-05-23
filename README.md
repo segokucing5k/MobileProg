@@ -1,16 +1,39 @@
-# shopping_app
+# Mobile Device Programming 
 
-A new Flutter project.
+## main 1
 
-## Getting Started
+### shopping cart
 
-This project is a starting point for a Flutter application.
+NOTE: main.dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'OSM in Flutter',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: BerandaPage(),
+    );
+  }
+}
 
-A few resources to get you started if this is your first Flutter project:
+## main 2
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### map
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### camera
+
+### sound record
+
+NOTE: main.dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter App',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: HomeScreen(),
+    );
+  }
+}
+
+
