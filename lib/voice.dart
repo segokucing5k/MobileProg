@@ -5,12 +5,6 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    home: VoiceRecorderApp(),
-  ));
-}
-
 class VoiceRecorderApp extends StatefulWidget {
   const VoiceRecorderApp({Key? key}) : super(key: key);
 
@@ -20,7 +14,7 @@ class VoiceRecorderApp extends StatefulWidget {
 
 class _VoiceRecorderAppState extends State<VoiceRecorderApp> {
   bool _isRecording = false;
-  final _audioRecorder = Record();
+  final _audioRecorder = AudioRecorder();
   final _audioPlayer = AudioPlayer();
   List<FileSystemEntity> _recordings = [];
   String? _currentRecordingPath;
@@ -80,10 +74,12 @@ class _VoiceRecorderAppState extends State<VoiceRecorderApp> {
         _currentRecordingPath = '${recordingsDir.path}/recording_$timestamp.m4a';
         
         await _audioRecorder.start(
+          RecordConfig(
+            encoder: AudioEncoder.aacLc,
+            bitRate: 128000,
+            sampleRate: 44100,
+          ),
           path: _currentRecordingPath!,
-          encoder: AudioEncoder.aacLc,
-          bitRate: 128000,
-          samplingRate: 44100,
         );
         
         setState(() {
