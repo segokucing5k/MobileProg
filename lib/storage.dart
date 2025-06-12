@@ -104,14 +104,14 @@ class FilePreviewWidget extends StatelessWidget {
 }
 
 /// Contoh penggunaan
-class StorageExamplePage extends StatefulWidget {
-  const StorageExamplePage({Key? key}) : super(key: key);
+class StorageAccess extends StatefulWidget {
+  const StorageAccess({Key? key}) : super(key: key);
 
   @override
-  State<StorageExamplePage> createState() => _StorageExamplePageState();
+  State<StorageAccess> createState() => _StorageAccessState();
 }
 
-class _StorageExamplePageState extends State<StorageExamplePage> {
+class _StorageAccessState extends State<StorageAccess> {
   final StorageService _storageService = StorageService();
   List<File> _selectedFiles = [];
   

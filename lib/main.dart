@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'firebase.dart';
-import 'simpan.dart';
-import 'home.dart';
+import 'login_firebase.dart';
+import 'storage.dart';
+import 'shopping.dart';
 import 'map.dart';
 import 'camera.dart';
 import 'voice.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => LoginScreen(),
         '/register': (context) => RegisterScreen(),
-        '/home': (context) => ShoppingPage(),
+        '/home': (context) => HomeScreen(),
       },
     );
   }
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Base APPS')),
+    //  appBar: AppBar(title: Text('Base APPS')),
       body: Column(
         children: [
           // Bagian peta (2/3 layar)
@@ -44,10 +44,10 @@ class HomeScreen extends StatelessWidget {
             flex: 2,
             child: Container(
               margin: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(12),
-              ),
+              // decoration: BoxDecoration(
+              //   border: Border.all(color: Colors.grey),
+              //   borderRadius: BorderRadius.circular(12),
+              // ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: OSMMap(),
@@ -125,11 +125,11 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => storageAccess(),
+                              builder: (context) => StorageAccess(),
                             ),
                           );
                         },
-                        icon: Icon(Icons.mic),
+                        icon: Icon(Icons.storage),
                         label: Text('Storage'),
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(

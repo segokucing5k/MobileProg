@@ -345,7 +345,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 _email,
                                 _password,
                               );
-                              Navigator.pushReplacementNamed(context, '/home');
+                              Navigator.pushReplacementNamed(context, '/login');
                             } on FirebaseAuthException catch (e) {
                               setState(() {
                                 _error = e.message ?? 'Registration failed';
