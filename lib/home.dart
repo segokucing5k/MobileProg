@@ -1,17 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      title: 'Shopping App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: const BerandaPage(),
-    ),
-  );
-}
 // Model for shopping items
 class Product {
   final int id;
@@ -60,39 +48,39 @@ class Cart {
   }
 }
 
-class BerandaPage extends StatefulWidget {
-  const BerandaPage({Key? key}) : super(key: key);
+class ShoppingPage extends StatefulWidget {
+  const ShoppingPage({Key? key}) : super(key: key);
 
   @override
-  _BerandaPageState createState() => _BerandaPageState();
+  _ShoppingPageState createState() => _ShoppingPageState();
 }
 
-class _BerandaPageState extends State<BerandaPage> {
+class _ShoppingPageState extends State<ShoppingPage> {
   final Cart _cart = Cart();
   final List<Product> _products = [
     Product(
       id: 1,
-      name: 'Sneakers',
-      price: 99.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'Expectorant',
+      price: 30.999,
+      imageUrl: 'actifed.jpg',
     ),
     Product(
       id: 2,
-      name: 'T-Shirt',
-      price: 29.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'Mucohexin',
+      price: 29.999,
+      imageUrl: 'mucohexin.jpg',
     ),
     Product(
       id: 3,
-      name: 'Jeans',
-      price: 59.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'Mecobalamin',
+      price: 114.999,
+      imageUrl: 'mecobalamin.jpg',
     ),
     Product(
       id: 4,
-      name: 'Hat',
-      price: 19.99,
-      imageUrl: 'https://via.placeholder.com/150',
+      name: 'Alaxan',
+      price: 80.299,
+      imageUrl: 'alaxan.jpg',
     ),
   ];
   

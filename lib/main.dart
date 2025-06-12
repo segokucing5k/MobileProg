@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/beranda.dart';
-import 'mapzzzz.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'firebase.dart';
+import 'simpan.dart';
+import 'home.dart';
+import 'map.dart';
 import 'camera.dart';
 import 'voice.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -14,8 +21,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'OSM in Flutter',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomeScreen(),
-      // home: BerandaPage(),
+      // home: HomeScreen(),
+      home: AuthWrapper(homeScreen: ShoppingPage()),
+      routes: {
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegisterScreen(),
+        '/home': (context) => ShoppingPage(),
+      },
     );
   }
 }
@@ -24,7 +36,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Shopping App')),
+      appBar: AppBar(title: Text('Base APPS')),
       body: Column(
         children: [
           // Bagian peta (2/3 layar)
@@ -74,10 +86,15 @@ class HomeScreen extends StatelessWidget {
                       ),
                       ElevatedButton.icon(
                         onPressed: () {
-                          // Aksi untuk peta jika diperlukan
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ShoppingPage(),
+                            ),
+                          );
                         },
-                        icon: Icon(Icons.map),
-                        label: Text('Peta'),
+                        icon: Icon(Icons.shop),
+                        label: Text('Belanja'),
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
                             horizontal: 20,
@@ -96,6 +113,24 @@ class HomeScreen extends StatelessWidget {
                         },
                         icon: Icon(Icons.mic),
                         label: Text('Suara'),
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
+                        ),
+                      ),
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => storageAccess(),
+                            ),
+                          );
+                        },
+                        icon: Icon(Icons.mic),
+                        label: Text('Storage'),
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(
                             horizontal: 20,
